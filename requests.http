@@ -1,0 +1,35 @@
+@baseUrl = http://localhost:8093
+@cardsUrl = {{baseUrl}}/api/v1/cards
+
+# GET health
+GET {{baseUrl}}/actuator/health
+
+###
+
+# Create a loan
+POST {{cardsUrl}}
+Content-Type: application/json
+
+{
+  "mobileNumber": "+49171123456789"
+}
+
+###
+
+# Fetch a loan
+GET {{cardsUrl}}/+49171123456789
+
+###
+
+# Update a loan
+PUT {{cardsUrl}}
+Content-Type: application/json
+
+{
+  "mobileNumber": "+49171123456789",
+  "cardNumber": "1875044123799494",
+  "cardType": "Credit Card",
+  "totalLimit": 5000,
+  "amountUsed": 1000,
+  "availableAmount": 4000
+}
