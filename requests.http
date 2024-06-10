@@ -27,9 +27,9 @@ Content-Type: application/json
 
 {
   "mobileNumber": "+49171123456789",
-  "cardNumber": "1875044123799494",
+  "cardNumber": "1291892679694062",
   "cardType": "Credit Card",
   "totalLimit": 5000,
-  "amountUsed": 1000,
-  "availableAmount": 4000
+  "amountUsed": 5000,
+  "availableAmount": 5000
 }
