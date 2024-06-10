@@ -13,7 +13,7 @@ import lombok.Data;
 @Builder
 public class CardDto {
 
-  @Schema(description = "Mobile phone number of customer", example = "+1 222 34567890")
+  @Schema(description = "Mobile phone number of customer", example = "+122234567890")
   @NotEmpty(message = "Mobile number must not be empty")
   @Pattern(regexp = "^\\+[1-9]{1}[0-9]{3,14}$", message = "Mobile number must be valid")
   private String mobileNumber;
