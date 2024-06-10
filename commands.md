@@ -21,3 +21,6 @@ mvn compile jib:build
 
 ### run docker container
 docker run -d -p 8093:8093 joheiss/sb3-cards:v1
+
+### push docker image to docker hub
+docker image push docker.io/joheiss/sb3-cards:v1
