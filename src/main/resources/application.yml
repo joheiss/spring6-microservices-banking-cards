@@ -1,8 +1,12 @@
 server:
   port: 8093
+
 spring:
   application:
     name: cards
+  profiles:
+    active: 
+      - prod
   datasource:
     url: jdbc:h2:mem:testdb
     driverClassName: org.h2.Driver
@@ -17,21 +21,26 @@ spring:
       ddl-auto: update
     show-sql: true
   config:
-      import:
-          - "application_test.yml"
-          - "application_prod.yml"
-  profiles:
-      active:
-#          - "test"
+    import: "optional:configserver:http://localhost:8071/"
 
-build:
-    version: "1.0.0"
 
-cards:
-    message: "Learning how to create microservices - here: cards"
-    contact:
-        name: "Hansi Hampelmann"
-        email: "hansi@heinzi.de"
-    support:
-        - +49 171 44455556
-        - +49 800 77778888
+# --- MOVED TO CLOUD CONFIG SERVER
+#   config:
+#       import:
+#           - "application_test.yml"
+#           - "application_prod.yml"
+#   profiles:
+#       active:
+# #          - "test"
+
+# build:
+#     version: "1.0.0"
+
+# cards:
+#     message: "Learning how to create microservices - here: cards"
+#     contact:
+#         name: "Hansi Hampelmann"
+#         email: "hansi@heinzi.de"
+#     support:
+#         - +49 171 44455556
+#         - +49 800 77778888
