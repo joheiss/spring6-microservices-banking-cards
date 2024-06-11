@@ -1,0 +1,16 @@
+spring:
+  config:
+    activate:
+      on-profile: "prod"
+
+build:
+    version: "0.7.0"
+
+cards:
+    message: "Learning how to create microservices - here: cards"
+    contact:
+        name: "Willi Wichtig, Product Owner"
+        email: "willi@heinzi.de"
+    support:
+        - +49 171 99988887
+        - +49 800 77778888

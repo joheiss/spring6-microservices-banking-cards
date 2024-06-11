@@ -6,6 +6,25 @@ GET {{baseUrl}}/actuator/health
 
 ###
 
+# GET build version
+GET {{cardsUrl}}/version
+
+###
+
+# GET java version
+GET {{cardsUrl}}/java-version
+
+###
+
+# GET env variable
+GET {{cardsUrl}}/env-variable/DB_USER
+
+###
+
+# GET contact information
+GET {{cardsUrl}}/contact-info
+
+###
 # Create a loan
 POST {{cardsUrl}}
 Content-Type: application/json

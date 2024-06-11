@@ -16,4 +16,22 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
-    
+  config:
+      import:
+          - "application_test.yml"
+          - "application_prod.yml"
+  profiles:
+      active:
+#          - "test"
+
+build:
+    version: "1.0.0"
+
+cards:
+    message: "Learning how to create microservices - here: cards"
+    contact:
+        name: "Hansi Hampelmann"
+        email: "hansi@heinzi.de"
+    support:
+        - +49 171 44455556
+        - +49 800 77778888

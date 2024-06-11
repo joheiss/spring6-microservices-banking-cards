@@ -1,0 +1,17 @@
+spring:
+  config:
+    activate:
+      on-profile: "test"
+
+
+build:
+    version: "0.8.0"
+
+cards:
+    message: "Learning how to create microservices - here: cards"
+    contact:
+        name: "Otto Ostermann, QA Lead"
+        email: "otto@heinzi.de"
+    support:
+        - +49 171 11122223
+        - +49 800 77778888
