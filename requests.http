@@ -6,6 +6,11 @@ GET {{baseUrl}}/actuator/health
 
 ###
 
+# Refresh config using actuator
+POST {{baseUrl}}/actuator/refresh
+
+###
+
 # GET build version
 GET {{cardsUrl}}/version
 

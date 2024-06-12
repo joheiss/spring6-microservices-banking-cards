@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.jovisco.services.cards.constants.CardsConstants;
 import com.jovisco.services.cards.dtos.CardDto;
-import com.jovisco.services.cards.dtos.CardsContactInfoDto;
+import com.jovisco.services.cards.dtos.ContactInfoDto;
 import com.jovisco.services.cards.dtos.CreateCardDto;
 import com.jovisco.services.cards.dtos.ErrorResponseDto;
 import com.jovisco.services.cards.dtos.ResponseDto;
@@ -47,7 +47,7 @@ public class CardsController {
 
     private final CardsService cardsService;
 
-    private final CardsContactInfoDto cardsContactInfoDto;
+    private final ContactInfoDto contactInfoDto;
 
     private final Environment environment;
 
@@ -211,17 +211,17 @@ public class CardsController {
 
     @Operation(summary = "Get contact information", description = "Get contact information for this service")
     @ApiResponses({
-            @ApiResponse(responseCode = "200", description = "HTTP Status OK", content = @Content(schema = @Schema(implementation = CardsContactInfoDto.class), examples = {
+            @ApiResponse(responseCode = "200", description = "HTTP Status OK", content = @Content(schema = @Schema(implementation = ContactInfoDto.class), examples = {
                     @ExampleObject(value = "{\"message\": \"Welcome to ...\", \"contact\": {\"name\": \"Jane Doe\", \"email\": \"jane@example.com\"}, \"support\": [\"+1 222 333 4444\", \"+1 555 666 7777\"]}") }, mediaType = MediaType.APPLICATION_JSON_VALUE)),
             @ApiResponse(responseCode = "500", description = "HTTP Status INTERNAL_SERVER_ERROR", content = @Content(schema = @Schema(implementation = ErrorResponseDto.class), examples = {
                     @ExampleObject(value = "{\"apiPath\": \"uri=/api/v1/cards/contact-info\", \"errorCode\": \"500\", \"errorMessage\": \"An error occurred ...\", \"errorTime\": \"2024-07-04T11:12:13\"}") }, mediaType = MediaType.APPLICATION_JSON_VALUE))
     })
 
     @GetMapping(path = CARDS_PATH + "/contact-info", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<CardsContactInfoDto> getContactInfo() {
+    public ResponseEntity<ContactInfoDto> getContactInfo() {
         return ResponseEntity
                 .status(HttpStatus.OK)
-                .body(cardsContactInfoDto);
+                .body(contactInfoDto);
     }
 
 }
