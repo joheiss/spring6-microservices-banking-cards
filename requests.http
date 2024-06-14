@@ -22,7 +22,7 @@ GET {{cardsUrl}}/java-version
 ###
 
 # GET env variable
-GET {{cardsUrl}}/env-variable/DB_USER
+GET {{cardsUrl}}/env-variable/SPRING_PROFILES_ACTIVE
 
 ###
 
@@ -51,7 +51,7 @@ Content-Type: application/json
 
 {
   "mobileNumber": "+49171123456789",
-  "cardNumber": "1291892679694062",
+  "cardNumber": "1048327038910784",
   "cardType": "Credit Card",
   "totalLimit": 5000,
   "amountUsed": 5000,

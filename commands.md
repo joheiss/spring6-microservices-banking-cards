@@ -24,3 +24,6 @@ docker run -d -p 8093:8093 joheiss/sb3-cards:v1
 
 ### push docker image to docker hub
 docker image push docker.io/joheiss/sb3-cards:v1
+
+### create mysql container for cardsdb
+docker run -p 3308:3306 --name cardsdb -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=cardsdb -d mysql
