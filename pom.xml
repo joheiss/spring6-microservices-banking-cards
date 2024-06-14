@@ -118,13 +118,11 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-				<image>
+					<!--
+					<image>
 						<name>joheiss/sb3-${project.artifactId}:v2</name>
-						<!-- you could also use:
-							<name>joheiss/${project.artifactId}:v1</name>
-									but in my case I prefer a different image name
-						-->
 					</image>
+					-->
 					<excludes>
 						<exclude>
 							<groupId>org.projectlombok</groupId>
@@ -133,18 +131,16 @@
 					</excludes>
 				</configuration>
 			</plugin>
-			<!--
 			<plugin>
 					<groupId>com.google.cloud.tools</groupId>
 					<artifactId>jib-maven-plugin</artifactId>
 					<version>3.4.2</version>
 					<configuration>
 						<to>
-							<image>joheiss/sb3-${project.artifactId}:v1</image>
+							<image>joheiss/sb3-${project.artifactId}:v3</image>
 						</to>
 					</configuration>
 				</plugin>
-				-->
 			</plugins>
 	</build>
 
