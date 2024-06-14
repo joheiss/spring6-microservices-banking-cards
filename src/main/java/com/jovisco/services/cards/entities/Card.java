@@ -12,12 +12,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-@Getter
-@Setter
-@ToString
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
+@Getter @Setter @ToString @NoArgsConstructor @AllArgsConstructor @Builder
 @Entity
 @Table(name = "cards")
 public class Card extends BaseEntity {

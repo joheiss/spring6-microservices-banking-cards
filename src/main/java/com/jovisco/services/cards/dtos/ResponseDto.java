@@ -6,9 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 
 @Schema(name = "API Response", description = "Schema to hold API response")
-@Data
-@AllArgsConstructor
-@Builder
+@Data @AllArgsConstructor @Builder
 public class ResponseDto {
 
   @Schema(description = "HTTP status code", example = "200")

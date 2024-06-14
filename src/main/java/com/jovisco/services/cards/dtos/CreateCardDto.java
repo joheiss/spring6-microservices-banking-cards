@@ -8,9 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Schema(name = "Create Card", description = "Schema to create a payment card")
-@NoArgsConstructor
-@AllArgsConstructor
-@Data
+@NoArgsConstructor @AllArgsConstructor @Data
 public class CreateCardDto {
 
   @Schema(description = "Mobile phone number of customer", example = "+122234567890")

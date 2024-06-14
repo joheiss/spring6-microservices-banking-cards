@@ -9,8 +9,7 @@ import lombok.Builder;
 import lombok.Data;
 
 @Schema(name = "Card", description = "Schema to transfer card data")
-@Data
-@Builder
+@Data @Builder
 public class CardDto {
 
   @Schema(description = "Mobile phone number of customer", example = "+122234567890")

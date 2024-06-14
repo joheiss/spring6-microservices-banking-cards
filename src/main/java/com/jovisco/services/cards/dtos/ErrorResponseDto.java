@@ -10,9 +10,7 @@ import lombok.Builder;
 import lombok.Data;
 
 @Schema(name = "Error Response", description = "Schema to hold error response")
-@Data
-@AllArgsConstructor
-@Builder
+@Data @AllArgsConstructor @Builder
 public class ErrorResponseDto {
 
   @Schema(description = "API path", example = "uri=/api/v1/cards/+122234567890")
