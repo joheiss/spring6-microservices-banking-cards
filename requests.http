@@ -6,6 +6,11 @@ GET {{baseUrl}}/actuator/health
 
 ###
 
+# SHUTDOWN app via actuator
+POST {{baseUrl}}/actuator/shutdown
+
+###
+
 # Refresh config using actuator
 POST {{baseUrl}}/actuator/refresh
 
