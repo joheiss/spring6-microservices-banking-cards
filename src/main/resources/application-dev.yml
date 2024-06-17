@@ -47,18 +47,21 @@ info:
         version: "1.0.0"
 
 management:
-    endpoints:
-        web:
-            exposure:
-                include: "*"
-                # include: "refresh"
-                # include: "bus-refresh"
-    endpoint:
-        shutdown:
-            enabled: true
-    info:
-        env:
-            enabled: true
+  endpoints:
+      web:
+          exposure:
+              include: "*"
+              # include: "refresh"
+              # include: "bus-refresh"
+  endpoint:
+    health:
+      probes:
+        enabled: true
+    shutdown:
+      enabled: true
+  info:
+      env:
+          enabled: true
 
 endpoints:
     shutdown:
