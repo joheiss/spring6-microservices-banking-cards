@@ -139,7 +139,7 @@
 					<version>3.4.2</version>
 					<configuration>
 						<to>
-							<image>joheiss/sb3-${project.artifactId}:v4</image>
+							<image>joheiss/sb3-${project.artifactId}:v5</image>
 						</to>
 					</configuration>
 				</plugin>
