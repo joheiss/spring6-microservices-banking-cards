@@ -49,6 +49,8 @@ public class CardsControllerIT {
 
   MockMvc mockMvc;
 
+  final String correlationId = "***TEST***";
+
   @BeforeEach
   void setUp() {
     mockMvc = MockMvcBuilders.webAppContextSetup(wac).build();
@@ -183,7 +185,7 @@ public class CardsControllerIT {
     cardsController.createCard(createDto);
 
     // check that card can be fetched
-    var response = cardsController.fetchCard(createDto.getMobileNumber());
+    var response = cardsController.fetchCard(correlationId, createDto.getMobileNumber());
     assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
     assertThat(response.getBody().getMobileNumber()).isEqualTo(createDto.getMobileNumber());
   }
@@ -193,7 +195,7 @@ public class CardsControllerIT {
 
     // check that an exception is thrown
     assertThatExceptionOfType(ResourceNotFoundException.class)
-        .isThrownBy(() -> cardsController.fetchCard("+999999999999"));
+        .isThrownBy(() -> cardsController.fetchCard(correlationId, "+999999999999"));
   }
 
   @Transactional
@@ -206,7 +208,7 @@ public class CardsControllerIT {
     cardsController.createCard(createDto);
 
     // ... fetch it, and update fields
-    var cardDto = cardsController.fetchCard(createDto.getMobileNumber()).getBody();
+    var cardDto = cardsController.fetchCard(correlationId, createDto.getMobileNumber()).getBody();
     cardDto.setTotalLimit(33333);
     cardDto.setAmountUsed(22222);
     cardDto.setAvailableAmount(11111);
@@ -230,7 +232,7 @@ public class CardsControllerIT {
     cardsController.createCard(createDto);
 
     // ... fetch it, and modify fields
-    var cardDto = cardsController.fetchCard(createDto.getMobileNumber()).getBody();
+    var cardDto = cardsController.fetchCard(correlationId, createDto.getMobileNumber()).getBody();
     cardDto.setTotalLimit(33333);
     cardDto.setAmountUsed(22222);
     cardDto.setAvailableAmount(11111);
@@ -240,7 +242,7 @@ public class CardsControllerIT {
     assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
 
     // check that fields have been updated with the correct values
-    var updated = cardsController.fetchCard(cardDto.getMobileNumber()).getBody();
+    var updated = cardsController.fetchCard(correlationId, cardDto.getMobileNumber()).getBody();
     assertThat(updated.getTotalLimit()).isEqualTo(cardDto.getTotalLimit());
     assertThat(updated.getAmountUsed()).isEqualTo(cardDto.getAmountUsed());
     assertThat(updated.getAvailableAmount()).isEqualTo(cardDto.getAvailableAmount());
@@ -256,7 +258,7 @@ public class CardsControllerIT {
     cardsController.createCard(createDto);
 
     // ... fetch it, and modify fields
-    var cardDto = cardsController.fetchCard(createDto.getMobileNumber()).getBody();
+    var cardDto = cardsController.fetchCard(correlationId, createDto.getMobileNumber()).getBody();
     cardDto.setTotalLimit(-33333);
     cardDto.setAmountUsed(-22222);
     cardDto.setAvailableAmount(-11111);
@@ -277,7 +279,7 @@ public class CardsControllerIT {
     cardsController.createCard(createDto);
 
     // ... fetch it, and modify fields
-    var cardDto = cardsController.fetchCard(createDto.getMobileNumber()).getBody();
+    var cardDto = cardsController.fetchCard(correlationId, createDto.getMobileNumber()).getBody();
     cardDto.setMobileNumber(null);
     cardDto.setTotalLimit(0);
     cardDto.setCardType(null);
