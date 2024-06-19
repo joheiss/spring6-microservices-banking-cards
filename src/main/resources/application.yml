@@ -72,6 +72,5 @@ endpoints:
 logging:
     level:
         com:
-            jovisco:
-                services:
-                    cards: debug
+            jovisco: debug
+

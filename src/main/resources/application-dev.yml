@@ -66,3 +66,8 @@ management:
 endpoints:
     shutdown:
         enabled: true
+
+logging:
+    level:
+        com:
+            jovisco: debug
