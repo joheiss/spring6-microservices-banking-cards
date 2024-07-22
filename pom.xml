@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.3.1</version>
+		<version>3.3.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
@@ -90,10 +90,15 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-config</artifactId>
 		</dependency>
-		<dependency>
+		<!-- <dependency>
       <groupId>org.springframework.cloud</groupId>
       <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+    </dependency>		 -->
+		<dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-kubernetes-discoveryclient</artifactId>
     </dependency>		
+
 		<!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-bus-amqp -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
@@ -156,7 +161,7 @@
 					<version>3.4.2</version>
 					<configuration>
 						<to>
-							<image>joheiss/sb3-${project.artifactId}:v6</image>
+							<image>joheiss/sb3-${project.artifactId}:v9</image>
 						</to>
 					</configuration>
 				</plugin>
